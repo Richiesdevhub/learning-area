@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Window resize example</title>
     <style>
-      body {
-        margin: 0;
-      }
-
-      div {
-        box-sizing: border-box;
-        width: 100px;
-        height: 100px;
-        background-image: url(bgtile.png);
-        border: 10px solid white;
-      }
+        body {
+            margin: 0;
+        }
+        
+        div {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background-image: url(bgtile.png);
+            border: 10px solid white;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div>
 
     </div>
 
     <script>
-
+        const div = document.querySelector('div');
+        window.onresize = function() {
+            let minWidth = window.innerWidth;
+            let minHeight = window.innerHeight;
+            div.style.width = minWidth + 'px';
+            div.style.minHeight = minHeight + 'px';
+        }
     </script>
-  </body>
+</body>
+
 </html>
