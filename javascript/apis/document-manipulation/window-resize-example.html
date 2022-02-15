@@ -28,11 +28,16 @@
 
     <script>
         const div = document.querySelector('div');
-        window.onresize = function() {
+
+        function resizeDiv(d) {
             let minWidth = window.innerWidth;
             let minHeight = window.innerHeight;
-            div.style.width = minWidth + 'px';
-            div.style.minHeight = minHeight + 'px';
+            d.style.width = minWidth + 'px';
+            d.style.minHeight = minHeight + 'px';
+        }
+        resizeDiv(div);
+        window.onresize = function() {
+            resizeDiv(div);
         }
     </script>
 </body>
